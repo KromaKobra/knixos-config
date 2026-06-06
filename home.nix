@@ -10,5 +10,13 @@
 
   home.packages = with pkgs; [
     fastfetch
+
+    kitty
+
+    wl-clipboard
+    grim
+    slurp
+
+    pavucontrol
   ];
 }
