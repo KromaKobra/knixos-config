@@ -66,11 +66,28 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
+
+    kitty
+    firefox
   ];
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
+  ];
+
+  programs.hyprland.enable = true;
+
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+
+  security.polkit.enable = true;
+
+  services.dbus.enable = true;
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-hyprland
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
