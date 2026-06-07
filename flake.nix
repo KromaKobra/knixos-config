@@ -8,9 +8,14 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, caelestia-shell, ... }:
   {
     nixosConfigurations.nixos =
       nixpkgs.lib.nixosSystem {
@@ -25,8 +30,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.kroma =
-              import ./home.nix;
+            home-manager.users.kroma = { ... }: {
+              imports = [
+                caelestia-shell.homeManagerModules.default
+                ./home.nix
+              ];
+            };
           }
         ];
       };
