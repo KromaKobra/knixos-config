@@ -16,6 +16,8 @@
     fastfetch
 
     kitty
+    firefox
+    obsidian
 
     wl-clipboard
     grim
