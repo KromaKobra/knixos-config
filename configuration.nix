@@ -54,6 +54,7 @@
     description = "Soren Brumbach";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages
@@ -66,6 +67,8 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
+
+    tree
   ];
 
   nix.settings.experimental-features = [
@@ -74,6 +77,7 @@
   ];
 
   programs.hyprland.enable = true;
+  programs.zsh.enable = true;
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;

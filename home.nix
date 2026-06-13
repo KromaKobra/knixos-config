@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.username = "kroma";
@@ -11,13 +11,35 @@
     enable = true;
     cli.enable = true;
   };
+  programs.zsh = {
+    enable = true;
+  };
+  programs.spicetify =
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in {
+      enable = true;
+      enabledExtensions = with spicePkgs.extensions; [
+        adblockify
+        hidePodcasts
+        shuffle
+      ];
+      theme = spicePkgs.themes.catppuccin;
+      colorScheme = "mocha";
+    };
+
+  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     fastfetch
 
-    kitty
-    firefox
-    obsidian
+    kitty       # terminal
+    firefox     # web browser
+    obsidian    # notetaking
+    vscodium    # code editor
+    xfce.thunar # file browser
+
+    app2unit
 
     wl-clipboard
     grim

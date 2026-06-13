@@ -13,9 +13,14 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, caelestia-shell, ... }:
+  outputs = { self, nixpkgs, home-manager, caelestia-shell, spicetify-nix, ... }@inputs:
   {
     nixosConfigurations.nixos =
       nixpkgs.lib.nixosSystem {
@@ -23,16 +28,15 @@
 
         modules = [
           ./configuration.nix
-
           home-manager.nixosModules.home-manager
-
           {
-            home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
-
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.kroma = { ... }: {
               imports = [
                 caelestia-shell.homeManagerModules.default
+                spicetify-nix.homeManagerModules.default
                 ./home.nix
               ];
             };
