@@ -24,6 +24,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
@@ -83,6 +86,12 @@
   services.displayManager.sddm.wayland.enable = true;
 
   security.polkit.enable = true;
+  security.wrappers.bwrap = {
+    owner = "root";
+    group = "root";
+    source = "${pkgs.bubblewrap}/bin/bwrap";
+    setuid = true;
+  };
 
   services.dbus.enable = true;
 

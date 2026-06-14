@@ -38,6 +38,8 @@
     obsidian    # notetaking
     vscodium    # code editor
     xfce.thunar # file browser
+    libreoffice # doc editor suite
+    lunar-client # Minecraft :)
 
     app2unit
 
@@ -45,6 +47,10 @@
     grim
     slurp
 
-    pavucontrol
+    pavucontrol	# audio controls 
+    nomacs	# media viewer
+
+    # Cyber
+    bind	# nslookup, etc.
   ];
 }
