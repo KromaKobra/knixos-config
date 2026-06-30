@@ -95,6 +95,11 @@
       colorScheme = "mocha";
     };
 
+  programs.zen-browser = {
+    enable = true;
+    setAsDefaultBrowser = true;
+  };
+
 
   ### PACKAGES ###
   nixpkgs.config.allowUnfree = true;
