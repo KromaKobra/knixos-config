@@ -102,14 +102,14 @@
   home.packages = with pkgs; [
     quickshell
 
-    kitty       	# terminal
-    firefox     	# web browser
-    obsidian    	# notetaking
-    vscodium    	# code editor
-    pkgs.claude-code	# ai client
-    pkgs.thunar 	# file browser
-    libreoffice 	# doc editor suite
-    lunar-client 	# minecraft :)
+    kitty       # terminal
+    firefox     # web browser
+    obsidian    # notetaking
+    vscodium    # code editor
+    claude-code	# ai client
+    thunar 	# file browser
+    libreoffice # doc editor suite
+    lunar-client # minecraft :)
 
     fastfetch
     app2unit
@@ -120,6 +120,7 @@
     wl-clipboard
     grim
     slurp
+    jq
     unzip
 
     pavucontrol	# audio controls 
