@@ -113,7 +113,9 @@
     vscodium    # code editor
     claude-code	# ai client
     thunar 	# file browser
+    inkscape	# svg editor
     libreoffice # doc editor suite
+    vesktop	# discord client
     lunar-client # minecraft :)
 
     fastfetch
