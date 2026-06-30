@@ -101,6 +101,15 @@
   };
 
 
+  ### CURSOR ### # Later switch to using hyprcursor which just renders local svg icons
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
+  };
+
+
   ### PACKAGES ###
   nixpkgs.config.allowUnfree = true;
 
