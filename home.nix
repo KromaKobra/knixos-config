@@ -77,7 +77,7 @@
       zstyle ':vcs_info:git:*' formats ' %F{3}(%b)%f'
       zstyle ':vcs_info:*' enable git
 
-      PROMPT='%F{4}%~%f''${vcs_info_msg_0_} %F{2}〉%f'
+      PROMPT='%F{4}%~%f''${vcs_info_msg_0_} %F{2}❯ %f'
     '';
   };
 
