@@ -26,13 +26,15 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  boot.kernelPackages = pkgs.linuxPackages_6_12; # Older stable version with bluetooth drivers that work with my cpu
+
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  hardware.bluetooth.settings = {
-    General = {
-      Enable = "Source,Sink,Media,Socket";
-    };
-  };
+  #hardware.bluetooth.settings = {
+  #  General = {
+  #    Enable = "Source,Sink,Media,Socket";
+  #  };
+  #};
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
