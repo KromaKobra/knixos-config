@@ -132,6 +132,7 @@
 
     material-symbols
     jetbrains-mono
+    nerd-fonts.jetbrains-mono
 
     wl-clipboard
     grim
